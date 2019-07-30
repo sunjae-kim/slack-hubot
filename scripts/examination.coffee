@@ -13,4 +13,4 @@ module.exports = (robot) ->
         acc
       , [0, 0]
     average = (sum / scores.length).toFixed(2)
-    res.reply "(평균 #{average} / 과락자 #{under_60})"
+    res.reply '(평균 #{average} / 과락자 #{under_60})'
