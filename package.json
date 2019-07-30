@@ -15,7 +15,7 @@
     "ws": "^7.1.1"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "12.4.x"
   },
   "devDependencies": {
     "dotenv": "^8.0.0"
