@@ -5,6 +5,8 @@
   "author": "sunjae-kim <kimsj9484@gmail.com>",
   "description": "hphk 운영에 도움을 줄 귀요미 봇입니다.",
   "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
     "hubot": "^3.3.2",
     "hubot-diagnostics": "^1.0.0",
     "hubot-help": "^1.0.1",
