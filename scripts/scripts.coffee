@@ -39,7 +39,6 @@ module.exports = (robot) ->
     response = axios.post "#{SHORTEN_URL}/shorten", body, { headers }
 
     response.then ({ data }) ->
-      res.reply data
-    .catch (error) ->
-      console.log error
       res.reply data.message
+    .catch (error) ->
+      res.reply error.response.data.message
