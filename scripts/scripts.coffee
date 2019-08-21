@@ -3,7 +3,7 @@ dotenv = require 'dotenv'
 do dotenv.config
 
 # Description:
-#   hphk 운영에 도움을 줄 귀요미 봇입니다.
+#   삶의 질을 높여 줄 귀요미 봇입니다.
 
 module.exports = (robot) ->
   # 점수 평균 구하기
@@ -33,12 +33,15 @@ module.exports = (robot) ->
     { SHORTEN_URL, HUBOT_SLACK_TOKEN } = process.env
     
     author = res.envelope.user.real_name
-    body = { from: rows[0], to: rows[1], author }
+    body = { originalUrl: rows[0], short: rows[1], author }
     headers = { "Hubot-Slack-Token": HUBOT_SLACK_TOKEN }
 
     response = axios.post "#{SHORTEN_URL}/shorten", body, { headers }
 
     response.then ({ data }) ->
-      res.reply data.message
+      if author == "김선재"
+        res.reply "sunjae.kim/" + data.message
+      else
+        res.reply "tisha.me/" + data.message
     .catch (error) ->
       res.reply error.response.data.message
